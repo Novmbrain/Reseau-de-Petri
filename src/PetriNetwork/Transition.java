@@ -1,15 +1,26 @@
 package PetriNetwork;
-/**
- * 
- */
 
-/**
- * @Description
- * @author wenjie fu email:wjfuxidian@163.com
- * @version
- * @date 2021年10月5日上午9:53:49
- * 
- */
+import java.util.LinkedList;
+
+import Arc.Arc;
+
+
 public class Transition {
+	
+	private LinkedList<Arc> arcs;
+	
+	public boolean isTriggerable(){
+		return false;
+		
+	}
+	
+	public void doFire(){
+		
+	}
+	
+	public void addArc(Arc arc){
+		
+		
+	}
 
 }
