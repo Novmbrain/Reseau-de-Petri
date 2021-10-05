@@ -10,10 +10,12 @@ import PetriNetwork.Transition;
 
 public class ArcEntered extends Arc{
 
-	public ArcEntered(Place place, Transition transition) {
-		super(place, transition);
+	public ArcEntered(String name, Place place, Transition transition) {
+		super(name, place, transition);
 		// TODO Auto-generated constructor stub
 	}
+
+
 	
 
 }
