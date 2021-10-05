@@ -11,5 +11,9 @@ package Arc;
  * 
  */
 public class Arc {
+	
+	private Arc Arc2Place;
+	
+	
 
 }
