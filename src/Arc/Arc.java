@@ -16,9 +16,6 @@ import PetriNetwork.Transition;
  */
 public class Arc {
 	
-<<<<<<< HEAD
-	private Arc Arc2Place;
-=======
 	private Place place;
 	private Transition transition;
 	private int tokenInArc;
@@ -29,7 +26,7 @@ public class Arc {
 		this.transition = transition;
 	}
 	
->>>>>>> 91b91abd3d3c462f70484270d09419d84076bdf2
+
 	
 	
 
