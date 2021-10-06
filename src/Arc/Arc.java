@@ -23,8 +23,26 @@ public class Arc {
 		this.tokenInArc = tokenInArc;
 	}
 	
+	public boolean haveEnoughToken(){
+		
+		return false;
+	}
 	
+	public void doChange(){
+		
+	}
 
+	public Place getPlace() {
+		return place;
+	}
+
+	public Transition getTransition() {
+		return transition;
+	}
+
+	public int getTokenInArc() {
+		return tokenInArc;
+	}
 	
 	
 	

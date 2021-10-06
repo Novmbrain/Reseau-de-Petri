@@ -18,9 +18,11 @@ public class ArcZero extends ArcEntered{
 		// TODO Auto-generated constructor stub
 	}
 
-
+	@Override
+	public boolean haveEnoughToken() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 	
-	
-
 	
 }

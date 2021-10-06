@@ -19,6 +19,10 @@ public class ArcEntered extends Arc{
 		super(place, transition);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+	
 
 
 

@@ -22,6 +22,16 @@ public class ArcEnteredNormal extends ArcEntered {
 		super(place, transition, tokenInArc);
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public void doChange() {
+		// TODO Auto-generated method stub
+		super.getPlace().fireChangeToken(-super.getTokenInArc());
+	}
+
+	
+	
+	
 	
 	
 	

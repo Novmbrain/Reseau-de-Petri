@@ -13,8 +13,8 @@ public class Place {
 		
 	}
 	
-	public void decreaseToken(int number){
-		
+	public void fireChangeToken(int number){
+		token += number;
 	}
 	
 	public boolean calculateToken(int tokenInArc){
@@ -26,6 +26,7 @@ public class Place {
 	}
 
 
+	
 
 	
 }

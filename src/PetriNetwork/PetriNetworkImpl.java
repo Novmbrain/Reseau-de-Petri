@@ -94,9 +94,11 @@ public class PetriNetworkImpl implements PetriNetwork{
 	 * @see PetriNetwork.PetriNetwork#addArcLeft(PetriNetwork.Place, PetriNetwork.Transition)
 	 */
 	@Override
-	public ArcLeft addArcLeft(Place place, Transition transition) {
+	public ArcLeft addArcLeft(Place place, Transition transition, int initialToken) {
 		// TODO Auto-generated method stub
-		return null;
+		ArcLeft arcLeft = new ArcLeft(place, transition, initialToken);
+		arcSet.add(arcLeft);
+		return arcLeft;	
 	}
 	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#connectTransition2ArcEntered(Arc.Arc)
@@ -104,7 +106,7 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public void connectTransition2ArcEntered(Transition transition, Arc arc) {
 		// TODO Auto-generated method stub
-		
+		transition.addArc(arc);
 	}
 	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#connectTransition2ArcLeft(Arc.Arc)
@@ -112,7 +114,7 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public void connectTransition2ArcLeft(Transition transition, Arc arc) {
 		// TODO Auto-generated method stub
-		
+		transition.addArc(arc);
 	}
 	
 	/* (non-Javadoc)
@@ -163,12 +165,13 @@ public class PetriNetworkImpl implements PetriNetwork{
 		}
 		
 	}
+	@Override
+	public String toString() {
+		return "PetriNetworkImpl [placeSet=" + placeSet + ", arcSet=" + arcSet + ", transitionSet=" + transitionSet
+				+ "]";
+	}
 
 	
-	
-	
-
-
 
 	
 

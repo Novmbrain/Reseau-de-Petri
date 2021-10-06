@@ -14,10 +14,10 @@ public interface PetriNetwork {
 	
 	public void changePlaceToken(Place place, int newToken);
 	
-	public ArcLeft addArcLeft(Place place, Transition transition);
+	public ArcLeft addArcLeft(Place place, Transition transition, int initialToken);
 	
 	public ArcZero addArcZero(Place place, Transition transition);
-	
+
 	public ArcVideur addArcVideur(Place place, Transition transition);
 	
 	public ArcEnteredNormal addArcEnteredNormal(Place place, Transition transition, int initialToken);

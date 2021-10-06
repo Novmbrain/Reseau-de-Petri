@@ -1,26 +1,39 @@
 package PetriNetwork;
 
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Set;
 
 import Arc.Arc;
 
 
 public class Transition {
 	
-	private LinkedList<Arc> arcs;
+	private Set<Arc> arcSet;
 
+	
+
+	public Transition() {
+		super();
+		arcSet = new HashSet();
+		
+	}
 
 	public boolean isTriggerable(){
+		//haveEnoughToken
 		return true;
 		
 	}
 	
 	public void doFire(){
+		for(Arc arc : arcSet){
+			arc.doChange();
+		}
+	
+		
 	}
 	
 	public void addArc(Arc arc){
-		
-		
+		arcSet.add(arc);
 	}
 
 	
