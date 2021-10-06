@@ -1,7 +1,7 @@
 package PetriNetwork;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 import Arc.Arc;
 import Arc.ArcEnteredNormal;
@@ -15,193 +15,120 @@ import Arc.ArcZero;
 
 public class PetriNetworkImpl implements PetriNetwork{
 	
-	private Map<String, Place> placeMap;
-	private Map<String, Arc> arcMap;
-	private Map<String, Transition> transitionMap;
+	private Set<Place> placeSet;
+	private Set<Arc> arcSet;
+	private Set<Transition> transitionSet;
 	
 	
-
+	
 	public PetriNetworkImpl() {
 		super();
-		placeMap = new HashMap<>();
-		arcMap = new HashMap<>();
-		transitionMap = new HashMap<>();
+		placeSet = new HashSet<>();
+		arcSet = new HashSet<>();
+		transitionSet = new HashSet<>();
+		
+	}
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#addPlace(int)
+	 */
+	@Override
+	public Place addPlace(int initialToken) {
+		// TODO Auto-generated method stub
+		Place newPlace = new Place(initialToken);
+		placeSet.add(newPlace);
+		return newPlace;
+
 	}
 	
 	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#addPlace(java.lang.String)
+	 * @see PetriNetwork.PetriNetwork#deletePlace(PetriNetwork.Place)
 	 */
 	@Override
-	public void addPlace(String placeName) {
-		// TODO Auto-generated method stub
-		
-		
-	}
-	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#deletePlace(java.lang.String)
-	 */
-	@Override
-	public void deletePlace(String placeName) {
+	public void deletePlace(Place place) {
 		// TODO Auto-generated method stub
 		
 	}
 	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#addArc(java.lang.String)
+	 * @see PetriNetwork.PetriNetwork#changePlaceToken(PetriNetwork.Place, int)
 	 */
 	@Override
-	public void addArc(String arcName) {
+	public void changePlaceToken(Place place, int newToken) {
 		// TODO Auto-generated method stub
 		
 	}
 	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#addArcZero(java.lang.String, java.lang.String, java.lang.String)
+	 * @see PetriNetwork.PetriNetwork#addArcZero(PetriNetwork.Place, PetriNetwork.Transition)
 	 */
 	@Override
-	public void addArcZero(String arcName, String placeName, int initialTokenPlace, String transitionName) {
+	public ArcZero addArcZero(Place place, Transition transition) {
 		// TODO Auto-generated method stub
-		Transition transition;
-		Place place;
-		
-		if(arcMap.containsKey(arcName)){
-			System.out.println("arc can't have the same name");
-			return;
-		}
-		
-		if(transitionMap.containsKey(transitionName)){
-			transition = transitionMap.get(transitionName);
-		}else{
-			transition = new Transition(transitionName);
-			transitionMap.put(transitionName, transition);
-		}
-		
-		if(placeMap.containsKey(placeName)){
-			place = placeMap.get(placeName);
-		}else{
-			place = new Place(initialTokenPlace, placeName);
-			placeMap.put(placeName, place);
-		}
-		
-		ArcZero arcZero = new ArcZero(arcName, place, transition);
-		
-		arcMap.put(arcName, arcZero);
+		ArcZero arcZero = new ArcZero(place, transition);
+		arcSet.add(arcZero);
+		return arcZero;
+	}
+	
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#addArcVideur(PetriNetwork.Place, PetriNetwork.Transition)
+	 */
+	@Override
+	public ArcVideur addArcVideur(Place place, Transition transition) {
+		// TODO Auto-generated method stub
+		ArcVideur arcVideur = new ArcVideur(place, transition);
+		arcSet.add(arcVideur);
+		return arcVideur;
+	}
+	
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#addArcEnteredNormal(PetriNetwork.Place, PetriNetwork.Transition, int)
+	 */
+	@Override
+	public ArcEnteredNormal addArcEnteredNormal(Place place, Transition transition, int initialToken) {
+		// TODO Auto-generated method stub
+		ArcEnteredNormal arcEnteredNormal = new ArcEnteredNormal(place, transition, initialToken);
+		arcSet.add(arcEnteredNormal);
+		return arcEnteredNormal;
+	}
+	
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#deleteArc(Arc.Arc)
+	 */
+	@Override
+	public void deleteArc(Arc arc) {
+		// TODO Auto-generated method stub
 		
 	}
 	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#addArcVideur(java.lang.String, java.lang.String, java.lang.String)
+	 * @see PetriNetwork.PetriNetwork#addTransition()
 	 */
 	@Override
-	public void addArcVideur(String arcName, String placeName, int initialTokenPlace, String transitionName) {
+	public Transition addTransition() {
 		// TODO Auto-generated method stub
-		Transition transition;
-		Place place;
+		Transition transition = new Transition();
+		transitionSet.add(transition);
+		return transition;
+	}
+	
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#deleteTransition(PetriNetwork.Transition)
+	 */
+	@Override
+	public void deleteTransition(Transition transition) {
+		// TODO Auto-generated method stub
 		
-		if(arcMap.containsKey(arcName)){
-			System.out.println("arc can't have the same name");
-			return;
-		}
+	}
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#changeArcToken(Arc.Arc, int)
+	 */
+	@Override
+	public void changeArcToken(Arc arc, int newToken) {
+		// TODO Auto-generated method stub
 		
-		if(transitionMap.containsKey(transitionName)){
-			transition = transitionMap.get(transitionName);
-		}else{
-			transition = new Transition(transitionName);
-			transitionMap.put(transitionName, transition);
-		}
-		
-		if(placeMap.containsKey(placeName)){
-			place = placeMap.get(placeName);
-		}else{
-			place = new Place(initialTokenPlace, placeName);
-			placeMap.put(placeName, place);
-		}
-		
-		ArcVideur arcVideur = new ArcVideur(arcName, place, transition);
-		
-		arcMap.put(arcName, arcVideur);
+	}
+	
+	
+	
 
-	}
-	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#addArcEnteredNormal(java.lang.String, java.lang.String, java.lang.String)
-	 */
-	@Override
-	public void addArcEnteredNormal(String arcName, String placeName, int initialTokenPlace, String transitionName) {
-		// TODO Auto-generated method stub
-		Transition transition;
-		Place place;
-		
-		if(arcMap.containsKey(arcName)){
-			System.out.println("arc can't have the same name");
-			return;
-		}
-		
-		if(transitionMap.containsKey(transitionName)){
-			transition = transitionMap.get(transitionName);
-		}else{
-			transition = new Transition(transitionName);
-			transitionMap.put(transitionName, transition);
-		}
-		
-		if(placeMap.containsKey(placeName)){
-			place = placeMap.get(placeName);
-		}else{
-			place = new Place(initialTokenPlace, placeName);
-			placeMap.put(placeName, place);
-		}
-		
-		ArcEnteredNormal arcEnteredNormal = new ArcEnteredNormal(arcName, place, transition);
-		
-		arcMap.put(arcName, arcEnteredNormal);
-		
-	}
-	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#deleteArc(java.lang.String)
-	 */
-	@Override
-	public void deleteArc(String arcName) {
-		// TODO Auto-generated method stub
-		
-	}
-	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#addTransition(java.lang.String)
-	 */
-	@Override
-	public void addTransition(String transitionName) {
-		// TODO Auto-generated method stub
-		
-	}
-	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#deleteTransition(java.lang.String)
-	 */
-	@Override
-	public void deleteTransition(String transitionName) {
-		// TODO Auto-generated method stub
-		
-	}
-	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#changeArcToken(java.lang.String, int)
-	 */
-	@Override
-	public void changeArcToken(String arcName, int newToken) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	public Map<String, Place> getPlaceMap() {
-		return placeMap;
-	}
-
-	public Map<String, Arc> getArcMap() {
-		return arcMap;
-	}
-
-	public Map<String, Transition> getTransitionMap() {
-		return transitionMap;
-	}
-
-	@Override
-	public String toString() {
-		return "PetriNetworkImpl [placeMap=" + placeMap + ", arcMap=" + arcMap + ", transitionMap=" + transitionMap
-				+ "]";
-	}
 
 	
 

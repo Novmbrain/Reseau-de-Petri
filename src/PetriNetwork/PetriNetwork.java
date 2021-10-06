@@ -1,24 +1,30 @@
 package PetriNetwork;
 
+import Arc.Arc;
+import Arc.ArcEnteredNormal;
+import Arc.ArcVideur;
+import Arc.ArcZero;
+
 public interface PetriNetwork {
-	public void addPlace(String placeName);
 	
-	public void deletePlace(String placeName);
+	public Place addPlace(int initialToken);
 	
-	public void addArc(String arcName);
+	public void deletePlace(Place place);
 	
-	public void addArcZero(String arcName, String placeName, int initialTokenPlace, String transitionName);
+	public void changePlaceToken(Place place, int newToken);
 	
-	public void addArcVideur(String arcname, String placeName, int initialTokenPlace, String transitionName);
+	public ArcZero addArcZero(Place place, Transition transition);
 	
-	public void addArcEnteredNormal(String name, String placeName, int initialTokenPlace, String transitionName);
+	public ArcVideur addArcVideur(Place place, Transition transition);
 	
-	public void deleteArc(String arcName);
+	public ArcEnteredNormal addArcEnteredNormal(Place place, Transition transition, int initialToken);
 	
-	public void addTransition(String transitionName);
+	public void deleteArc(Arc arc);
 	
-	public void deleteTransition(String transitionName);
+	public Transition addTransition();
 	
-	public void changeArcToken(String arcName, int newToken);
+	public void deleteTransition(Transition transition);
+	
+	public void changeArcToken(Arc arc, int newToken);
 	
 }

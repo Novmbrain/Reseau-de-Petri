@@ -9,8 +9,12 @@ import PetriNetwork.Transition;
 
 public class ArcVideur extends ArcEntered{
 
-	public ArcVideur(String name, Place place, Transition transition) {
-		super(name, place, transition);
+	/**
+	 * @param place
+	 * @param transition
+	 */
+	public ArcVideur(Place place, Transition transition) {
+		super(place, transition);
 		// TODO Auto-generated constructor stub
 	}
 

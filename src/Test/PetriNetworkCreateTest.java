@@ -5,7 +5,10 @@ package Test;
 
 import org.junit.Test;
 
+import Arc.ArcEnteredNormal;
 import PetriNetwork.PetriNetworkImpl;
+import PetriNetwork.Place;
+import PetriNetwork.Transition;
 
 /**
  * @Description
@@ -19,10 +22,11 @@ public class PetriNetworkCreateTest {
 	public void CreateSimplePetriNetwork(){
 		PetriNetworkImpl pN1 = new PetriNetworkImpl();
 		
-		pN1.addArcEnteredNormal("arc1", "place1", 1, "transition1");
+		Place place = pN1.addPlace(1);
+		Transition transition = pN1.addTransition();
+		ArcEnteredNormal addArcEnteredNormal = pN1.addArcEnteredNormal(place, transition, 2);
 		
-		System.out.println(pN1);
-		
+
 	}
 
 }
