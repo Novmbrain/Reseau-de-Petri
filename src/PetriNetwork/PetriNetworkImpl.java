@@ -5,6 +5,7 @@ import java.util.Set;
 
 import Arc.Arc;
 import Arc.ArcEnteredNormal;
+import Arc.ArcLeft;
 import Arc.ArcVideur;
 import Arc.ArcZero;
 
@@ -90,6 +91,31 @@ public class PetriNetworkImpl implements PetriNetwork{
 	}
 	
 	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#addArcLeft(PetriNetwork.Place, PetriNetwork.Transition)
+	 */
+	@Override
+	public ArcLeft addArcLeft(Place place, Transition transition) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#connectTransition2ArcEntered(Arc.Arc)
+	 */
+	@Override
+	public void connectTransition2ArcEntered(Transition transition, Arc arc) {
+		// TODO Auto-generated method stub
+		
+	}
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#connectTransition2ArcLeft(Arc.Arc)
+	 */
+	@Override
+	public void connectTransition2ArcLeft(Transition transition, Arc arc) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#deleteArc(Arc.Arc)
 	 */
 	@Override
@@ -124,6 +150,20 @@ public class PetriNetworkImpl implements PetriNetwork{
 		// TODO Auto-generated method stub
 		
 	}
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#fire()
+	 */
+	@Override
+	public void fire() {
+		// TODO Auto-generated method stub
+		for(Transition transition : transitionSet){
+			if(transition.isTriggerable()){
+				transition.doFire();
+			}
+		}
+		
+	}
+
 	
 	
 	

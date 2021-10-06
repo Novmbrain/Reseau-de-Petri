@@ -11,12 +11,11 @@ public class Transition {
 
 
 	public boolean isTriggerable(){
-		return false;
+		return true;
 		
 	}
 	
 	public void doFire(){
-		
 	}
 	
 	public void addArc(Arc arc){
