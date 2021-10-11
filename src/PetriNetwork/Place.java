@@ -10,8 +10,10 @@ public class Place {
 
 
 	public void addToken(int number){
+		token += number;
 		
 	}
+	
 	
 	public void fireChangeToken(int number){
 		token += number;

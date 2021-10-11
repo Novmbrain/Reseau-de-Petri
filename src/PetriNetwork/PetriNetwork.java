@@ -12,7 +12,9 @@ public interface PetriNetwork {
 	
 	public void deletePlace(Place place);
 	
-	public void changePlaceToken(Place place, int newToken);
+	public void addPlaceToken(Place place, int addTokenNumber);
+	
+	public void deletePlaceToken(Place place, int deleteTokenNumber);
 	
 	public ArcLeft addArcLeft(Place place, Transition transition, int initialToken);
 	

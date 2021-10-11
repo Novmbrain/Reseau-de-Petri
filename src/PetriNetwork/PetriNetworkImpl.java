@@ -47,19 +47,33 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public void deletePlace(Place place) {
 		// TODO Auto-generated method stub
+		placeSet.remove(place);
 		
 	}
 	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#changePlaceToken(PetriNetwork.Place, int)
 	 */
+	
+	public int getPlaceSetSize() {
+		return placeSet.size();
+	}
+	
 	@Override
-	public void changePlaceToken(Place place, int newToken) {
+	public void addPlaceToken(Place place, int addTokenNumber) {
 		// TODO Auto-generated method stub
+		place.addToken(addTokenNumber);
 		
 	}
 	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#addArcZero(PetriNetwork.Place, PetriNetwork.Transition)
 	 */
+	
+	@Override
+	public void deletePlaceToken(Place place, int deleteTokenNumber) {
+		// TODO Auto-generated method stub
+		place.addToken(-deleteTokenNumber);
+	}
+
 	@Override
 	public ArcZero addArcZero(Place place, Transition transition) {
 		// TODO Auto-generated method stub
@@ -123,8 +137,23 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public void deleteArc(Arc arc) {
 		// TODO Auto-generated method stub
+		arcSet.remove(arc);
+		arc.getTransition().removeArc(arc);
+	}
+	/* (non-Javadoc)
+	 * @see PetriNetwork.PetriNetwork#changeArcToken(Arc.Arc, int)
+	 */
+	@Override
+	public void changeArcToken(Arc arc, int newToken) {
+		// TODO Auto-generated method stub
+		arc.changeArcToken(newToken);
 		
 	}
+	
+	public int getArcSetSize() {
+		return arcSet.size();
+	}
+	
 	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#addTransition()
 	 */
@@ -142,16 +171,14 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public void deleteTransition(Transition transition) {
 		// TODO Auto-generated method stub
+		transitionSet.remove(transition);
 		
 	}
-	/* (non-Javadoc)
-	 * @see PetriNetwork.PetriNetwork#changeArcToken(Arc.Arc, int)
-	 */
-	@Override
-	public void changeArcToken(Arc arc, int newToken) {
-		// TODO Auto-generated method stub
-		
+	
+	public int getTransitonSetSize() {
+		return transitionSet.size();
 	}
+	
 	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#fire()
 	 */

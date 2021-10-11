@@ -36,6 +36,9 @@ public class Transition {
 		arcSet.add(arc);
 	}
 
+	public void removeArc(Arc arc) {
+		arcSet.remove(arc);
+	}
 	
 	
 

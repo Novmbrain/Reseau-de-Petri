@@ -44,6 +44,8 @@ public class Arc {
 		return tokenInArc;
 	}
 	
-	
+	public void changeArcToken(int newTokenInArc) {
+		tokenInArc = newTokenInArc;
+	}
 	
 }
