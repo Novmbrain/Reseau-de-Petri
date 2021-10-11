@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import Arc.Arc;
+import Arc.ArcVideur;
 
 
 public class Transition {
@@ -20,15 +21,28 @@ public class Transition {
 
 	public boolean isTriggerable(){
 		//haveEnoughToken
+		for(Arc arc : arcSet){
+			if(!arc.haveEnoughToken()){
+				return false;
+			}
+		}
 		return true;
 		
 	}
 	
 	public void doFire(){
+		//should first empty place, expacially for the moste simple case(one place one transition)  
 		for(Arc arc : arcSet){
-			arc.doChange();
+			if((arc instanceof ArcVideur)){
+				arc.doChange();	
+			}
 		}
-	
+		
+		for(Arc arc : arcSet){
+			if(!(arc instanceof ArcVideur)){
+				arc.doChange();	
+			}
+		}
 		
 	}
 	
