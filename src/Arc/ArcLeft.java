@@ -27,8 +27,17 @@ public class ArcLeft extends Arc{
 	@Override
 	public void doChange() {
 		// TODO Auto-generated method stub
-		super.getPlace().fireChangeToken(super.getTokenInArc());
+		super.getPlace().fireAddToken(super.getTokenInArc());
 	}
+
+	@Override
+	public boolean haveEnoughToken() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	
+	
+	
 	
 	
 

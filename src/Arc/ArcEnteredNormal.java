@@ -26,8 +26,21 @@ public class ArcEnteredNormal extends ArcEntered {
 	@Override
 	public void doChange() {
 		// TODO Auto-generated method stub
-		super.getPlace().fireChangeToken(-super.getTokenInArc());
+		super.getPlace().fireDecreaseToken(super.getTokenInArc());
 	}
+
+	@Override
+	public boolean haveEnoughToken() {
+		// TODO Auto-generated method stub
+		Place tempPlace = super.getPlace();
+		if(tempPlace.getToken() < this.getTokenInArc()){
+			return false;
+		}
+		
+		return true;
+	}
+	
+	
 
 	
 	

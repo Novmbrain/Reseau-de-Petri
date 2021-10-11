@@ -1,6 +1,10 @@
 package PetriNetwork;
 
 public class Place {
+	public final static int FLAGARCZERO = 0;
+	public final static int FLAGARCVIDEUR = -1;
+	
+	
 	private int token;
 
 	public Place(int token) {
@@ -13,7 +17,21 @@ public class Place {
 		
 	}
 	
-	public void fireChangeToken(int number){
+	public void fireDecreaseToken(int number){
+		switch(number){
+			case FLAGARCVIDEUR :
+				token -= token;
+				break;
+			case FLAGARCZERO :
+				token = token;
+				break;
+			default:
+				token -= number;
+				break;				
+		}
+	}
+	
+	public void fireAddToken(int number){
 		token += number;
 	}
 	
