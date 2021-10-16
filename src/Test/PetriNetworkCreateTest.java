@@ -12,11 +12,7 @@ import Arc.ArcLeft;
 import Arc.ArcVideur;
 import Arc.ArcZero;
 import Exception4PetriNetwork.DoubleArcException;
-<<<<<<< HEAD
-
-=======
 import PetriNetwork.PetriNetwork;
->>>>>>> 5e804da08a8c107a6c1caeb550ed12ccaaab4c0e
 import PetriNetwork.PetriNetworkImpl;
 import PetriNetwork.Place;
 import PetriNetwork.Transition;
