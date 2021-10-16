@@ -215,6 +215,42 @@ public class PetriNetworkImpl implements PetriNetwork{
 		return "PetriNetworkImpl [placeSet=" + placeSet + ", arcSet=" + arcSet + ", transitionSet=" + transitionSet
 				+ "]";
 	}
+	
+	@Override
+	public String show() {
+		// TODO Auto-generated method stub
+		StringBuffer sbuffer = new StringBuffer();
+		
+		
+		sbuffer.append("PetriNetwork\n" + 
+					   "	" + placeSet.size() + " places\n" + 
+					   "	" + transitionSet.size() +" transition\n" + 
+					   "	" + arcSet.size() + " arcs\n");
+		
+		sbuffer.append("List of Places:\n");
+		int count = 1;
+		for(Place place : placeSet) {
+			sbuffer.append("	" + (count++) +" : " + place.toString());
+		}
+		
+		sbuffer.append("List of transitions\n");
+		count = 1;
+		for(Transition transition : transitionSet) {
+			sbuffer.append("	" + (count++) + " : " + transition.toString());
+		}
+		
+		sbuffer.append("List of arcs\n");
+		
+		count = 1;
+		for(Arc arc : arcSet) {
+			sbuffer.append("	" + (count++) + " : " + arc.toString());
+		}
+		
+		return sbuffer.toString();
+			
+	}
+	
+	
 
 	
 
