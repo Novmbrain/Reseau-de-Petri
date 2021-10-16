@@ -10,6 +10,7 @@ import Arc.ArcVideur;
 import Arc.ArcZero;
 import Exception4PetriNetwork.DoubleArcException;
 
+
 /**
  * 
  */
@@ -34,12 +35,14 @@ public class PetriNetworkImpl implements PetriNetwork{
 	 * @see PetriNetwork.PetriNetwork#addPlace(int)
 	 */
 	@Override
-	public Place addPlace(int initialToken) {
+	public Place addPlace(int initialToken)  {
 		// TODO Auto-generated method stub
-		Place newPlace = new Place(initialToken);
-		placeSet.add(newPlace);
-		return newPlace;
-
+		if(initialToken >= 0) {
+			Place newPlace = new Place(initialToken);
+			placeSet.add(newPlace);
+			return newPlace;
+		}
+		return null;
 	}
 	
 	/* (non-Javadoc)
@@ -62,7 +65,9 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public void addPlaceToken(Place place, int addTokenNumber) {
 		// TODO Auto-generated method stub
-		place.addToken(addTokenNumber);
+		if(addTokenNumber >= 0) {
+			place.addToken(addTokenNumber);
+		}
 		
 	}
 	/* (non-Javadoc)
@@ -72,7 +77,10 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public void deletePlaceToken(Place place, int deleteTokenNumber) {
 		// TODO Auto-generated method stub
-		place.addToken(-deleteTokenNumber);
+		if((deleteTokenNumber >= 0) && (deleteTokenNumber <= place.getToken())) {
+			place.addToken(-deleteTokenNumber);
+		}
+
 	}
 
 	@Override
@@ -100,9 +108,10 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public ArcEnteredNormal addArcEnteredNormal(Place place, Transition transition, int initialToken) {
 		// TODO Auto-generated method stub
-		ArcEnteredNormal arcEnteredNormal = new ArcEnteredNormal(place, transition, initialToken);
+		ArcEnteredNormal arcEnteredNormal = new ArcEnteredNormal(place, transition, Math.abs(initialToken));
 		arcSet.add(arcEnteredNormal);
 		return arcEnteredNormal;
+
 	}
 	
 	/* (non-Javadoc)

@@ -7,6 +7,7 @@ import Arc.ArcVideur;
 import Arc.ArcZero;
 import Exception4PetriNetwork.DoubleArcException;
 
+
 public interface PetriNetwork {
 	
 	public Place addPlace(int initialToken);

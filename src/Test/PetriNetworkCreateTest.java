@@ -12,6 +12,7 @@ import Arc.ArcLeft;
 import Arc.ArcVideur;
 import Arc.ArcZero;
 import Exception4PetriNetwork.DoubleArcException;
+
 import PetriNetwork.PetriNetworkImpl;
 import PetriNetwork.Place;
 import PetriNetwork.Transition;
@@ -82,7 +83,7 @@ public class PetriNetworkCreateTest {
 	}
 	
 	@Test
-	public void TestDoubleArc1() {
+	public void TestDoubleArc1(){
 		PetriNetworkImpl pN1 = new PetriNetworkImpl();
 		Place place = pN1.addPlace(2);
 		Transition transition = pN1.addTransition();
