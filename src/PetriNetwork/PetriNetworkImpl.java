@@ -8,6 +8,7 @@ import Arc.ArcEnteredNormal;
 import Arc.ArcLeft;
 import Arc.ArcVideur;
 import Arc.ArcZero;
+import Exception4PetriNetwork.DoubleArcException;
 
 /**
  * 
@@ -114,20 +115,28 @@ public class PetriNetworkImpl implements PetriNetwork{
 		arcSet.add(arcLeft);
 		return arcLeft;	
 	}
+	
 	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#connectTransition2ArcEntered(Arc.Arc)
 	 */
 	@Override
-	public void connectTransition2ArcEntered(Transition transition, Arc arc) {
+	public void connectTransition2ArcEntered(Transition transition, Arc arc) throws DoubleArcException {
 		// TODO Auto-generated method stub
+		if(transition.isArcExist(arc)) {
+			throw new DoubleArcException();
+		}
+		
 		transition.addArc(arc);
 	}
 	/* (non-Javadoc)
 	 * @see PetriNetwork.PetriNetwork#connectTransition2ArcLeft(Arc.Arc)
 	 */
 	@Override
-	public void connectTransition2ArcLeft(Transition transition, Arc arc) {
+	public void connectTransition2ArcLeft(Transition transition, Arc arc) throws DoubleArcException {
 		// TODO Auto-generated method stub
+		if(transition.isArcExist(arc)) {
+			throw new DoubleArcException();
+		}
 		transition.addArc(arc);
 	}
 	

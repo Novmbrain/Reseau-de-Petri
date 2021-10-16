@@ -5,6 +5,7 @@ import Arc.ArcEnteredNormal;
 import Arc.ArcLeft;
 import Arc.ArcVideur;
 import Arc.ArcZero;
+import Exception4PetriNetwork.DoubleArcException;
 
 public interface PetriNetwork {
 	
@@ -28,9 +29,9 @@ public interface PetriNetwork {
 	
 	public Transition addTransition();
 	
-	public void connectTransition2ArcEntered(Transition transition, Arc arc);
+	public void connectTransition2ArcEntered(Transition transition, Arc arc) throws DoubleArcException;
 	
-	public void connectTransition2ArcLeft(Transition transition, Arc arc);
+	public void connectTransition2ArcLeft(Transition transition, Arc arc) throws DoubleArcException;
 	
 	public void deleteTransition(Transition transition);
 	

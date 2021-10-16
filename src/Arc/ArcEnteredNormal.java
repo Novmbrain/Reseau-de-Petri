@@ -8,6 +8,8 @@ import PetriNetwork.Transition;
 
 
 public class ArcEnteredNormal extends ArcEntered {
+	
+	
 
 	/**
 	 * @param place

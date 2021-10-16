@@ -11,6 +11,7 @@ import Arc.ArcEnteredNormal;
 import Arc.ArcLeft;
 import Arc.ArcVideur;
 import Arc.ArcZero;
+import Exception4PetriNetwork.DoubleArcException;
 import PetriNetwork.PetriNetworkImpl;
 import PetriNetwork.Place;
 import PetriNetwork.Transition;
@@ -24,7 +25,7 @@ import PetriNetwork.Transition;
 public class PetriNetworkCreateTest {
 	
 	@Test
-	public void ArcEnterdNormalTestInSimplePetriNetwork(){
+	public void ArcEnterdNormalTestInSimplePetriNetwork() throws DoubleArcException{
 		PetriNetworkImpl pN1 = new PetriNetworkImpl();
 		
 		Place place = pN1.addPlace(2);
@@ -44,7 +45,7 @@ public class PetriNetworkCreateTest {
 	}
 	
 	@Test
-	public void ArcZeroTestInSimplePetriNetwork(){
+	public void ArcZeroTestInSimplePetriNetwork() throws DoubleArcException{
 		PetriNetworkImpl pN1 = new PetriNetworkImpl();
 		
 		Place place = pN1.addPlace(0);
@@ -62,7 +63,7 @@ public class PetriNetworkCreateTest {
 	}
 	
 	@Test
-	public void ArcVideurTestInSimplePetriNetwork(){
+	public void ArcVideurTestInSimplePetriNetwork() throws DoubleArcException{
 		PetriNetworkImpl pN1 = new PetriNetworkImpl();
 		
 		Place place = pN1.addPlace(2);
@@ -78,6 +79,30 @@ public class PetriNetworkCreateTest {
 		pN1.fire();
 	
 		assertEquals(2, place.getToken());
+	}
+	
+	@Test
+	public void TestDoubleArc1() {
+		PetriNetworkImpl pN1 = new PetriNetworkImpl();
+		Place place = pN1.addPlace(2);
+		Transition transition = pN1.addTransition();
+		
+		ArcEnteredNormal arcEnteredNormal = pN1.addArcEnteredNormal(place, transition, 1);
+		ArcZero arcZero = pN1.addArcZero(place, transition);
+		
+		try {
+			pN1.connectTransition2ArcEntered(transition, arcEnteredNormal);
+			pN1.connectTransition2ArcEntered(transition, arcZero);
+			
+		} catch (DoubleArcException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+			
+		}
+		
+		
+			
+		
 	}
 
 }
