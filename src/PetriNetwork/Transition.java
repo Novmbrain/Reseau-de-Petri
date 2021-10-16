@@ -31,7 +31,7 @@ public class Transition {
 	}
 	
 	public void doFire(){
-		//should first empty place, expacially for the moste simple case(one place one transition)  
+		//should first empty place and tokens to the place, expacially for the most simple case(one place one transition)  
 		for(Arc arc : arcSet){
 			if((arc instanceof ArcVideur)){
 				arc.doChange();	
@@ -62,6 +62,36 @@ public class Transition {
 		}
 		
 		return false;
+	}
+	
+	public int numberOfArcLeft() {
+		int numberOfArcLeft = 0;
+		for(Arc arc : arcSet) {
+			if(arc.isDirection() == Arc.ARCLEFT) {
+				numberOfArcLeft++;
+			}
+		}
+		
+		return numberOfArcLeft;
+		
+	}
+	
+	public int numberOfArcEntered() {
+		int numberOfArcEntered = 0;
+		for(Arc arc : arcSet){
+			if(arc.isDirection() == Arc.ARCENTERED) {
+				numberOfArcEntered++;
+			}
+		}
+		
+		return numberOfArcEntered; 
+	}
+
+	@Override
+	public String toString() {
+		int numOfArcEntered = numberOfArcEntered();
+		int numOfArcLeft = numberOfArcLeft();
+		return "transition, " + numOfArcLeft + " arc left, " + numOfArcEntered + " arc entered\n";
 	}
 	
 	

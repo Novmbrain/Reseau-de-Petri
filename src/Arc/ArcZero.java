@@ -38,6 +38,15 @@ public class ArcZero extends ArcEntered{
 		
 		return true;
 	}
+
+
+	@Override
+	public String toString() {
+		return "arcZero " + " (place with " + super.getPlace().getToken()
+				+ " tokens to transition)\n";
+	}
+	
+	
 	
 	
 	

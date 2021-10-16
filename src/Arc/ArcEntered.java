@@ -15,13 +15,13 @@ public class ArcEntered extends Arc{
 	public ArcEntered(Place place, Transition transition, int tokenInArc) {
 		super(place, transition, tokenInArc);
 		// TODO Auto-generated constructor stub
-		super.setDirection(true);
+		super.setDirection(Arc.ARCENTERED);
 	}
 
 	public ArcEntered(Place place, Transition transition) {
 		super(place, transition);
 		// TODO Auto-generated constructor stub
-		super.setDirection(true);
+		super.setDirection(Arc.ARCENTERED);
 		
 	}
 

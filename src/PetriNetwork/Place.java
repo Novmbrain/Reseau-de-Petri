@@ -6,6 +6,11 @@ public class Place {
 	
 	
 	private int token;
+	
+	public Place() {
+		token = 0;
+	}
+
 
 	public Place(int token) {
 		super();
@@ -44,10 +49,13 @@ public class Place {
 	public int getToken() {
 		return token;
 	}
-	
-	
 
 
+	@Override
+	public String toString() {
+		return "place avec " + token + " tokens\n";
+	}	
+	
 	
 
 	

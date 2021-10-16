@@ -39,4 +39,6 @@ public interface PetriNetwork {
 	
 	public void fire();
 	
+	public String show();
+	
 }

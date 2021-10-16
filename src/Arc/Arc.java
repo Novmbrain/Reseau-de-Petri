@@ -12,6 +12,9 @@ public class Arc {
 	private Transition transition;
 	private int tokenInArc;
 	private boolean direction;
+	public static final boolean ARCLEFT = true;
+	public static final boolean ARCENTERED = false;
+	
 	
 	public Arc(Place place, Transition transition) {
 		super();
@@ -74,15 +77,13 @@ public class Arc {
 		return direction == other.direction && Objects.equals(place, other.place)
 				&& Objects.equals(transition, other.transition);
 	}
-	
+
+	@Override
+	public String toString() {
+			return "";
+	}
 	
 
-	
-
-	
-	
-	
-	
 	
 	
 	

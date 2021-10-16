@@ -41,6 +41,12 @@ public class ArcEnteredNormal extends ArcEntered {
 		
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "arcEnteredNormal " + "weights " + super.getTokenInArc() + " (place with " + super.getPlace().getToken()
+				+ " tokens to transition)\n";
+	}
 	
 	
 

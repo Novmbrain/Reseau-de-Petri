@@ -37,6 +37,14 @@ public class ArcVideur extends ArcEntered{
 		
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "arcVideur " + " (place with " + super.getPlace().getToken()
+				+ " tokens to transition)\n";
+	}
+	
+	
 	
 	
 	
