@@ -13,6 +13,11 @@ import PetriNetwork.Transition;
 
 public class ShowTest {
 	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 * @throws DoubleArcException
+	 */
 	@Test
 	public void AA1() throws DoubleArcException {
 		System.out.println("\n----------AA1 Test----------");
@@ -24,7 +29,10 @@ public class ShowTest {
 		
 		System.out.println(pN1.toString());
 	}
-	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 */
 	@Test
 	public void AP1() {
 		System.out.println("\n----------AP1 Test----------");
@@ -34,6 +42,10 @@ public class ShowTest {
 		System.out.println(pN1.show());
 	}
 	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 */
 	@Test
 	public void AP2() {
 		System.out.println("\n----------AP2 Test----------");
@@ -44,6 +56,10 @@ public class ShowTest {
 		System.out.println(pN1.show());
 	}
 	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@Test
 	public void AR1() throws DoubleArcException {
 		System.out.println("\n----------AR1 Test----------");
@@ -59,7 +75,10 @@ public class ShowTest {
 		
 		System.out.println(pN1.show());
 	}
-	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@Test
 	public void AT1() {
 		System.out.println("\n----------AT1 Test----------");
@@ -69,7 +88,10 @@ public class ShowTest {
 		
 		System.out.println(pN1.show());
 	}
-	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@Test
 	public void AT2() throws DoubleArcException {
 		System.out.println("\n----------AT2 Test----------");

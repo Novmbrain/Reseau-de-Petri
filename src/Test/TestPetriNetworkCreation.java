@@ -1,6 +1,5 @@
 package Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterAll;
@@ -12,7 +11,6 @@ import org.junit.jupiter.api.Test;
 
 import Arc.ArcEnteredNormal;
 import Arc.ArcLeft;
-import Arc.ArcZero;
 import Exception4PetriNetwork.DoubleArcException;
 import PetriNetwork.PetriNetworkImpl;
 import PetriNetwork.Place;
@@ -20,16 +18,29 @@ import PetriNetwork.Transition;
 
 public class TestPetriNetworkCreation {
 	
+	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@BeforeAll
 	static void setup() {
 		System.out.println("@BeforeAll executed");
 	}
 	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@BeforeEach
 	void setupThis() {
 		System.out.println("@BeforeEach executed");
 	}
 	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@Test
 	void CPe() {
         PetriNetworkImpl pN1 = new PetriNetworkImpl();
@@ -41,6 +52,10 @@ public class TestPetriNetworkCreation {
 		Assertions.assertEquals(2, pN1.getPlaceSetSize());
 	}
 	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@Test
 	void CT() {
         PetriNetworkImpl pN2 = new PetriNetworkImpl();
@@ -52,7 +67,10 @@ public class TestPetriNetworkCreation {
 		
 		Assertions.assertEquals(1, pN2.getTransitonSetSize());
 	}
-	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@Test
 	void SJP2() {
         PetriNetworkImpl pN2 = new PetriNetworkImpl();
@@ -64,7 +82,10 @@ public class TestPetriNetworkCreation {
 
 		Assertions.assertEquals(2, p1.getToken());
 	}
-	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@Test
 	void CAN1() {
         PetriNetworkImpl pN3 = new PetriNetworkImpl();
@@ -75,7 +96,10 @@ public class TestPetriNetworkCreation {
 		
 		assertEquals(1, pN3.getArcSetSize());
 	}
-	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 */
 	@Test
 	void AEND() {
 		PetriNetworkImpl pN4 = new PetriNetworkImpl();
@@ -116,7 +140,10 @@ public class TestPetriNetworkCreation {
 		Assertions.assertEquals(1, p1.getToken());
 		Assertions.assertEquals(5, p2.getToken());
 	}
-	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 */
 	@Test
 	void REM0() throws DoubleArcException {
         PetriNetworkImpl pN1 = new PetriNetworkImpl();
@@ -139,7 +166,10 @@ public class TestPetriNetworkCreation {
 		Assertions.assertEquals(1, p2.getToken());
 		Assertions.assertEquals(5, p3.getToken());
 	}
-	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 */
 	@Test
 	void REM1() throws DoubleArcException {
         PetriNetworkImpl pN1 = new PetriNetworkImpl();
@@ -162,7 +192,10 @@ public class TestPetriNetworkCreation {
 		Assertions.assertEquals(2, p2.getToken());
 		Assertions.assertEquals(2, p3.getToken());
 	}
-	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 */
 	@Test
 	void testDeletePlace() {
         PetriNetworkImpl pN1 = new PetriNetworkImpl();
@@ -175,7 +208,10 @@ public class TestPetriNetworkCreation {
 
 		assertEquals(2, pN1.getPlaceSetSize());
 	}
-	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 */
 	@Test
 	void testDeleteTransition() {
         PetriNetworkImpl pN2 = new PetriNetworkImpl();
@@ -187,12 +223,18 @@ public class TestPetriNetworkCreation {
 		
 		assertEquals(1, pN2.getTransitonSetSize());
 	}
-	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@AfterEach
 	void tearThis() {
 		System.out.println("@AfterEach executed");
 	}
-	
+	/**
+	 * 
+	 * @author Wenjie FU
+	 */
 	@AfterAll
 	static void  tear() {
 		System.out.println("@AfterAll executed");
