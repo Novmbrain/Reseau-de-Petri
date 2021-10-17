@@ -122,6 +122,10 @@ public class TestPetriNetworkCreation {
 		Assertions.assertEquals(1, pN4.getArcSetSize());
 	}
 	
+	/**
+	 * 
+	 * @author Yuhua XIN
+	 */
 	@Test
 	void RM2() throws DoubleArcException {
         PetriNetworkImpl pN1 = new PetriNetworkImpl();
