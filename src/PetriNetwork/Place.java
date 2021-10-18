@@ -53,6 +53,9 @@ public class Place {
 
 	@Override
 	public String toString() {
+		if(token < 0) {
+			return "place avec " + token+"(negative)" + " tokens\n";
+		}
 		return "place avec " + token + " tokens\n";
 	}	
 	
