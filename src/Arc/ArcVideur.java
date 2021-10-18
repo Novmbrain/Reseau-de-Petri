@@ -23,7 +23,7 @@ public class ArcVideur extends ArcEntered{
 	public void doChange() {
 		// TODO Auto-generated method stub
 		Place tempPlace = super.getPlace();
-		tempPlace.fireDecreaseToken(tempPlace.FLAGARCVIDEUR);
+		tempPlace.fireDecreaseToken(tempPlace.FLAGARCVIDEUR); //FLAGARCVIDEUR is -1
 	}
 
 	@Override
