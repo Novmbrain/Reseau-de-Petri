@@ -11,7 +11,7 @@ import PetriNetwork.Place;
 import PetriNetwork.Transition;
 
 
-public class ShowTest {
+public class TestShow {
 	
 	/**
 	 * 

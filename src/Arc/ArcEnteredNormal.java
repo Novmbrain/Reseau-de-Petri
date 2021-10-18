@@ -23,7 +23,7 @@ public class ArcEnteredNormal extends ArcEntered {
 	public ArcEnteredNormal(Place place, Transition transition, int tokenInArc) {
 		super(place, transition, tokenInArc);
 		// TODO Auto-generated constructor stub
-	}
+	} //in generally, the ArcEnteredNormal has weight(tokenInArc)
 
 	@Override
 	public void doChange() {

@@ -11,9 +11,9 @@ public class Arc {
 	private Place place;
 	private Transition transition;
 	private int tokenInArc;
-	private boolean direction;
-	public static final boolean ARCLEFT = true;
-	public static final boolean ARCENTERED = false;
+	private boolean direction; //the direction is to distinguish the ArcLeft(Transition to Place) and the ArcEntered(Place to Transition)
+	public static final boolean ARCLEFT = false; //the direction of the ArcLeft is false
+	public static final boolean ARCENTERED = true; //the direction of the ArcEntered is true
 	
 	
 	public Arc(Place place, Transition transition) {
@@ -31,7 +31,7 @@ public class Arc {
 	
 	public boolean haveEnoughToken(){
 		
-		return false;
+		return false; //by default, we set to false, so the Transition is not triggerable.
 	}
 	
 	public void doChange(){

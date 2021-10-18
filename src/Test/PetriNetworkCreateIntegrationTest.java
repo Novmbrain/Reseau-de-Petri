@@ -1,4 +1,4 @@
-package NotFinish;
+package Test;
 
 
 
@@ -10,13 +10,14 @@ import org.junit.jupiter.api.Test;
 
 import Arc.ArcEnteredNormal;
 import Arc.ArcLeft;
+import Arc.ArcZero;
 import Exception4PetriNetwork.DoubleArcException;
 
 import PetriNetwork.PetriNetworkImpl;
 import PetriNetwork.Place;
 import PetriNetwork.Transition;
 
-public class PetriNetworkChangeTest {
+public class PetriNetworkCreateIntegrationTest {
 	
 	@Test
 	public void SimplePetriNetworkPlaceChange() {
@@ -68,5 +69,26 @@ public class PetriNetworkChangeTest {
 		
 		assertEquals(1, pN4.getArcSetSize());
 		assertEquals(6, arcEnteredNormal.getTokenInArc());
+	}
+	
+	@Test
+	public void TestDoubleArc1(){
+		PetriNetworkImpl pN1 = new PetriNetworkImpl();
+		Place place = pN1.addPlace(2);
+		Transition transition = pN1.addTransition();
+		
+		ArcEnteredNormal arcEnteredNormal = pN1.addArcEnteredNormal(place, transition, 1);
+		ArcZero arcZero = pN1.addArcZero(place, transition);
+		
+		try {
+			pN1.connectTransition2ArcEntered(transition, arcEnteredNormal);
+			pN1.connectTransition2ArcEntered(transition, arcZero);
+			
+		} catch (DoubleArcException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+			
+		}
+		
 	}
 }

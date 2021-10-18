@@ -59,6 +59,7 @@ public class Transition {
 	}
 
 	public boolean isArcExist(Arc arc) {
+		//to check if the arc already exists
 		for(Arc tempArc : this.arcSet) {
 			if(tempArc.equals(arc)) {
 				return true;

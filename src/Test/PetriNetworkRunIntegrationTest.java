@@ -1,7 +1,7 @@
 /**
  * 
  */
-package NotFinish;
+package Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,7 +22,7 @@ import PetriNetwork.Transition;
  * @version
  * 
  */
-public class PetriNetworkCreateTest {
+public class PetriNetworkRunIntegrationTest {
 	
 	@Test
 	public void ArcEnterdNormalTestInSimplePetriNetwork() throws DoubleArcException{
@@ -81,27 +81,5 @@ public class PetriNetworkCreateTest {
 		assertEquals(2, place.getToken());
 	}
 	
-	@Test
-	public void TestDoubleArc1(){
-		PetriNetworkImpl pN1 = new PetriNetworkImpl();
-		Place place = pN1.addPlace(2);
-		Transition transition = pN1.addTransition();
-		
-		ArcEnteredNormal arcEnteredNormal = pN1.addArcEnteredNormal(place, transition, 1);
-		ArcZero arcZero = pN1.addArcZero(place, transition);
-		
-		try {
-			pN1.connectTransition2ArcEntered(transition, arcEnteredNormal);
-			pN1.connectTransition2ArcEntered(transition, arcZero);
-			
-		} catch (DoubleArcException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e.getMessage());
-			
-		}
-		
-	}
-	
-
 
 }

@@ -1,8 +1,8 @@
 package PetriNetwork;
 
 public class Place {
-	public final static int FLAGARCZERO = 0;
-	public final static int FLAGARCVIDEUR = -1;
+	public final static int FLAGARCZERO = 0; //the flag is to let place know it is the ArcZero, when decrease token, place will all the tokens
+	public final static int FLAGARCVIDEUR = -1; //the flag is to let place know it is the ArcVideur, the token in place will not change
 	
 	
 	private int token;
@@ -42,9 +42,9 @@ public class Place {
 		token += number;
 	}
 	
-	public boolean calculateToken(int tokenInArc){
-		return false;
-	}
+//	public boolean calculateToken(int tokenInArc){
+//		return false;
+//	}
 
 	public int getToken() {
 		return token;

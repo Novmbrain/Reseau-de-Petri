@@ -10,7 +10,7 @@ import PetriNetwork.Transition;
 
 public class ArcEntered extends Arc{
 	
-	private static final boolean direction = true;
+	private static final boolean direction = true; //the direction of all the ArcEntered (ArcEnteredNormal, ArcZero, ArcVideur) is true
 
 	public ArcEntered(Place place, Transition transition, int tokenInArc) {
 		super(place, transition, tokenInArc);

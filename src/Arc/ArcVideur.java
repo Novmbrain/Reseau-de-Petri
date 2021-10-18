@@ -9,8 +9,7 @@ import PetriNetwork.Transition;
 
 public class ArcVideur extends ArcEntered{
 	
-	private static final int thresholdOfArcVideur = 1;
-
+	
 	/**
 	 * @param place
 	 * @param transition
@@ -31,7 +30,7 @@ public class ArcVideur extends ArcEntered{
 	public boolean haveEnoughToken() {
 		// TODO Auto-generated method stub
 		Place tempPlace = super.getPlace();
-		if(tempPlace.getToken() < thresholdOfArcVideur){
+		if(tempPlace.getToken() < 1){
 			return false;
 		}
 		
