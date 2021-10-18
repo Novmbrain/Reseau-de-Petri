@@ -9,7 +9,6 @@ import PetriNetwork.Transition;
 
 public class ArcZero extends ArcEntered{
 	
-	private final static int thresholdOfArcZero = 0; 
 
 	/**
 	 * @param place
@@ -25,7 +24,7 @@ public class ArcZero extends ArcEntered{
 	public void doChange() {
 		// TODO Auto-generated method stub
 		Place tempPlace = super.getPlace();
-		tempPlace.fireDecreaseToken(tempPlace.FLAGARCZERO);
+		tempPlace.fireDecreaseToken(tempPlace.FLAGARCZERO); //FLAGARCZERO is 0
 	}
 	
 	@Override

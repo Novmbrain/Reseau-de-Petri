@@ -21,7 +21,7 @@ public class ArcLeft extends Arc{
 		super(place, transition, tokenInArc);
 		// TODO Auto-generated constructor stub
 		super.setDirection(Arc.ARCLEFT);
-	}
+	} //in generally, the ArcLeft has weight(tokenInArc)
 
 	@Override
 	public void doChange() {
@@ -32,7 +32,7 @@ public class ArcLeft extends Arc{
 	@Override
 	public boolean haveEnoughToken() {
 		// TODO Auto-generated method stub
-		return true;
+		return true; //for the ArcLeft, we set the result to true because it doesn't affect whether the transition is triggerable or not
 	}
 
 	@Override
