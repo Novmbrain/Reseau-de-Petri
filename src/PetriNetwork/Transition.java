@@ -54,6 +54,10 @@ public class Transition {
 		arcSet.remove(arc);
 	}
 	
+	public Set<Arc> getArcSet() {
+		return arcSet;
+	}
+
 	public boolean isArcExist(Arc arc) {
 		for(Arc tempArc : this.arcSet) {
 			if(tempArc.equals(arc)) {

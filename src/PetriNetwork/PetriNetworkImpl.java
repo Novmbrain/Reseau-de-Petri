@@ -189,7 +189,9 @@ public class PetriNetworkImpl implements PetriNetwork{
 	@Override
 	public void deleteTransition(Transition transition) {
 		// TODO Auto-generated method stub
+		arcSet.removeAll(transition.getArcSet());
 		transitionSet.remove(transition);
+		
 		
 	}
 	

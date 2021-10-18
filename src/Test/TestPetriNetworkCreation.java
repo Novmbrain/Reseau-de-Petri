@@ -164,7 +164,7 @@ public class TestPetriNetworkCreation {
 	}
 	
 	@Test
-	void testDeletePlace() {
+	void SP0() {
         PetriNetworkImpl pN1 = new PetriNetworkImpl();
 		
 		Place p1 = pN1.addPlace(5);
@@ -173,19 +173,23 @@ public class TestPetriNetworkCreation {
 
 		pN1.deletePlace(p1);
 
-		assertEquals(2, pN1.getPlaceSetSize());
+		Assertions.assertEquals(2, pN1.getPlaceSetSize());
 	}
 	
 	@Test
-	void testDeleteTransition() {
+	void ST1() throws DoubleArcException {
         PetriNetworkImpl pN2 = new PetriNetworkImpl();
 		
+        Place p1 = pN2.addPlace(1);
 		Transition t1 = pN2.addTransition();
-		Transition t2 = pN2.addTransition();
+		ArcEnteredNormal arcEnteredNormal = pN2.addArcEnteredNormal(p1, t1, 1);
 		
-		pN2.deleteTransition(t2);
+		pN2.connectTransition2ArcEntered(t1, arcEnteredNormal);
 		
-		assertEquals(1, pN2.getTransitonSetSize());
+		pN2.deleteTransition(t1);
+		
+		Assertions.assertEquals(0, pN2.getTransitonSetSize());
+		Assertions.assertEquals(0, pN2.getArcSetSize());
 	}
 	
 	@AfterEach
